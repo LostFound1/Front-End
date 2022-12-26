@@ -1,0 +1,8 @@
+.panel-heading .active {
+    background-color: var(--primary) !important;
+    color: #EEE !important;
+}
+
+form .btn-primary {
+    font-size: 18px !important;
+}
