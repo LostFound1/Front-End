@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useSignIn } from 'react-auth-kit';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const RegisterForm = () => {
 
@@ -27,9 +28,21 @@ const RegisterForm = () => {
         token: res.data.token,
         expiresIn: 10000,
         tokenType: "Bearer",
-        authState: res.data.user_info
+        authState: {
+          'name' : res.data.data.name , 
+          'token' : res.data.data.token,
+          'user' : res.data.data.user
+        }
       })) {
-        return navigate('/')
+        Swal.fire({
+          icon: 'success',
+          title: 'Succussfully Registeration',
+          text: 'The Page will redirect to home page after 5 seconds',
+        })
+  
+        setTimeout(() => {
+          navigate('/');
+        }, 5000);
       }
     }).catch(res => {
       console.log(res.response.data);
@@ -85,12 +98,12 @@ const RegisterForm = () => {
               <div className="col-12">
                 <button className="btn btn-primary w-100 py-3" type="submit">Create Account</button>
               </div>
-              <div className="col-12 text-center text-2xl">
+              {/* <div className="col-12 text-center text-2xl">
                 OR
               </div>
               <div className="col-12">
                 <button className="btn btn-primary w-100 py-3" type="submit">Login Via Google</button>
-              </div>
+              </div> */}
             </div>
           </form>
   )

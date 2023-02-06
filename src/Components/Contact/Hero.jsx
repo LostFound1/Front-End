@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Hero = () => {
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[]);
+
   return (
     <div className="container-fluid header bg-white p-0">
   <div className="row g-0 align-items-center flex-column-reverse flex-md-row">

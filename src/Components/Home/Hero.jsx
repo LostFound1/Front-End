@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useEffect } from 'react'
 import $ from 'jquery'
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
 
@@ -33,7 +34,7 @@ const Hero = () => {
       <h1 className="display-5 animated fadeIn mb-4">Have you 
         <span className="text-primary"> Lost or Found </span> something?</h1>
       <p className="animated fadeIn mb-4 pb-2">You are in the best place to post about this</p>
-      <a href className="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
+      <Link to={'/add'} className="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</Link>
     </div>
     <div className="col-md-6 animated fadeIn">
       <div className="owl-carousel header-carousel">

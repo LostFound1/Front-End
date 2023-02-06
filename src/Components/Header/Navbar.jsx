@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import { useAuthUser, useIsAuthenticated, useSignOut } from "react-auth-kit";
 
@@ -7,6 +7,7 @@ const Navbar = () => {
   const isAuth = useIsAuthenticated();
   const user = useAuthUser();
   const signOut = useSignOut();
+  const navigate= useNavigate();
 
   // console.log(isAuth());
   // console.log(user());
@@ -31,6 +32,7 @@ const Navbar = () => {
           Authorization: `Bearer ${user().token}`,
         },
     });
+    navigate('/');
   }
 
   return (
@@ -161,7 +163,7 @@ const Navbar = () => {
                       className="nav-link dropdown-toggle"
                       data-bs-toggle="dropdown"
                     >
-                      {user().name}
+                      {user().user.first_name.slice(0,16)}
                     </Link>
                     <div className="dropdown-menu rounded-0 m-0">
                       <Link to='/profile' className="dropdown-item">

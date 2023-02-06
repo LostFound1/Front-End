@@ -6,6 +6,7 @@ import './Login.css'
 
 const Login = () => {
 
+
     useEffect(()=>{
         $(function() {
 
@@ -28,6 +29,7 @@ const Login = () => {
             
             $('#login-form-link').trigger('click');
             });
+            window.scrollTo(0, 0)
     },[])
 
   return (

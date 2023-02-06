@@ -46,7 +46,7 @@ const LoginForm = () => {
       // yo catch error form server 
     }).catch(res => {
       // set error information 
-      setValid(res.response.data)
+      setValid(res.response.data);
       console.log(res.response.data);
     })
   };
@@ -70,12 +70,12 @@ const LoginForm = () => {
               <div className="col-12">
                 <button className="btn btn-primary w-100 py-3 " type="submit">Login</button>
               </div>
-              <div className="col-12 text-center text-2xl">
+              {/* <div className="col-12 text-center text-2xl">
                 OR
               </div>
               <div className="col-12">
                 <button className="btn btn-primary w-100 py-3" type="submit">Login Via Google</button>
-              </div>
+              </div> */}
               
             </div>
     </form>
